@@ -187,17 +187,11 @@ if __name__ == "__main__":
                 rRet = prepare(rType.upper())
                 if not install(rType.upper()): sys.exit(1)
                 if rType.upper() == "MAIN":
-                    if not mysql(rUsername, rPassword): sys.exit(1)
-                encrypt(rHost, rUsername, rPassword, rDatabase, rServerID, rPort)
                 configure()
                 start()
                 printc("Installation completed!", col.OKGREEN, 2)
                 if rType.upper() == "MAIN":
-                    printc("Please store your MySQL password!")
-                    printc(rPassword)
-            else: printc("Installation cancelled", col.FAIL)
-        else: printc("Invalid entries", col.FAIL)
-    elif rType.upper() == "ADMIN":
+     elif rType.upper() == "ADMIN":
         if os.path.exists("/home/xtreamcodes/iptv_xtream_codes/wwwdir/api.php"):
             printc("Install Admin Panel?", col.WARNING)
             if raw_input("  ").upper() == "Y":
